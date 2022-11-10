@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'pages#home'
+  root 'articles#index'
   get 'about', to:'pages#about'
-  resources :articles, only: [:show, :index]
+  resources :articles
+  # We can use the below line to show only the particular route.
+  #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 end
