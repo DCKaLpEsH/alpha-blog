@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'articles#index'
   get 'about', to:'pages#about'
   resources :articles
+  get 'signup', to:'users#new'
+  resources :users, except: [:new]
   # We can use the below line to show only the particular route.
   #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 end
